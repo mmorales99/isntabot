@@ -17,7 +17,7 @@ if($output=="BT"){
 }
 if($output==""){
 	echo "ERROR, NO SERVER RESPONSE";
-	header("Locationm: index.php");
+	#header("Location: index.php"); #commented for debug 
 	exit;
 }
 $_SESSION["UserId"] = $output;

@@ -1,7 +1,7 @@
 <?php
 	session_start();
 	sleep(3);
-	# falta añadir el guardado de la base de datos y la posterior desactivacion
+	# WIP la desactivacion de los bots, no esta implementada la activacion total de los bots
 	
 	
 	session_destroy();

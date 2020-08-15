@@ -75,15 +75,6 @@
 									}
 									echo '</tr>';
 								} 
-								##
-								#foreach(['ID','USUARIO','PASSWORD','LISTA DE ORDENES'] as $attribute) {
-								#	echo '<tr><th>'.$attribute.'</th></tr>';
-								#	foreach($_SESSION["UserBotsList"] as $row) {
-								#		echo '<tr><td>'.$row[$attribute].'</td></tr>';
-								#	}
-								#	echo '';
-								#}
-								##
 								echo '</table>';
 							}else{
 								echo 'NO HAY BOTS DISPONIBLES<br><br><br>';
@@ -93,7 +84,7 @@
 					</div>
             	</div>
             	<!--<div class="botsinfo-box">
-            	
+							WIP
             	</div>-->
             </div>
         </div>

@@ -56,13 +56,13 @@ class Database:
 			os.mkdir(os.path.join(self.workspace_name+user_id))
 			return "User added"
 
-	def add_bot(self, user_id, toFollow=[], user_email="isntabot@gmail.com"):
+	def add_bot(self, user_id, toFollow=[], user_email="<YOUR BOT EMAIL>"):
 		user_path = self.workspace_name + str(user_id)+"/"
 		nbot = pyBot().create(user_email, self._getLastId(), toFollow, user_path)
 		f = open(user_path+str(user_id)+".config", "a+")
 		f.write(nbot.getId()+"\n")
 
-	def create_default(self, conf=""): # falta poner la configuracion inicial
+	def create_default(self, conf=""): # genera la sesion root, id 0
 		if(conf==""):
 			os.mkdir(os.path.join("./"+self.workspace_name))
 		config_file = open(self.workspace_name+self.config_file_name, "w+")
@@ -78,9 +78,9 @@ class Database:
 			botpath = adminpath+"/"+"0"+".bot"
 			f = open(botpath, "w+")
 			f.write("0"+"\n")
-			f.write("mjmorales.mcv+dev@gmail.com"+"\n") # cambiar antes del deploy
-			f.write("mmoralitosdev"+"\n")
-			f.write("Manu;1510"+"\n")
+			f.write("<ADMINs EMAIL>"+"\n")
+			f.write("<ADMIN ACCOUNT>"+"\n")
+			f.write("<ADMIN PASSWORD>"+"\n")
 			f.write("@wazime.es")
 
 def get_bots(UserId, db):

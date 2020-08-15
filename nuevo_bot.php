@@ -24,7 +24,7 @@
         <div class="main-box">
         	<form action="genera_bots.php" method="post">
         		Total bots a generar: <input type="text" name="total_bots" placeholder="Numero de bots que se van a crear..."> <br>
-        		Cuentas/Hashtags a seguir: <input type="text" name="cuentasyhashtags" placeholder="Los que pongas aquí se va a seguir.EJEMPLO DE USO: mmoralitos99, mmoralitosdev, #AINTTHATSAD..."> <br>
+        		Cuentas/Hashtags a seguir: <input type="text" name="cuentasyhashtags" placeholder="Los que pongas aquí se va a seguir.EJEMPLO DE USO: @mmoralitos99, @mmoralitosdev, #AINTTHATSAD..."> <br>
         		<input type="submit" value="GENERA LOS BOTS" name="generar">
         	</form>
             <form action="mybot.php" method="post">

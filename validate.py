@@ -108,28 +108,3 @@ def correctPw(u, u1):
 	if u.getPword() == u1.getPword():
 		return True
 	return False
-
-"""
-
-
-"""
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

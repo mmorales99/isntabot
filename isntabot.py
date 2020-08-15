@@ -160,7 +160,7 @@ class pyBot:
                 profile_link = self.browser.find_element_by_xpath("/html/body/div[1]/section/nav/div[2]/div/div/div[3]/div/div[5]/div[2]/div/div[2]/div[2]/a[1]/div/div[2]/div/div/div/div")
                 profile_link.click()
         sleep(1)
-    def _goto_register(self, email="isntabot@gmail.com", id="0"):
+    def _goto_register(self, email="<YOUR BOT EMAIL>", id="0"):
         self.browser=webdriver.Chrome()
         self.browser.implicitly_wait(5)
         self.browser.get('https://www.instagram.com/accounts/emailsignup/')
@@ -168,7 +168,7 @@ class pyBot:
         identitat = identitats()
         nombre = identitat.get_rand_name()
         uname = identitat.get_rand_Uname(id)
-        pword = "1snt4b0t;"
+        pword = "<YOUR BOT PASSWORD>;"
         arroba = 0
         for x in email:
             if(x=='@'):
@@ -214,9 +214,9 @@ class pyBot:
         sleep(15)
         self.browser.get("https://mail.google.com/mail/u/0/#inbox")
         try:
-            self.browser.find_element_by_xpath("/html/body/div[1]/div[1]/div[2]/div/div[2]/div/div/div[2]/div/div[1]/div/form/span/section/div/div/div[1]/div/div[1]/div/div[1]/input").send_keys("isntabot@gmail.com")
+            self.browser.find_element_by_xpath("/html/body/div[1]/div[1]/div[2]/div/div[2]/div/div/div[2]/div/div[1]/div/form/span/section/div/div/div[1]/div/div[1]/div/div[1]/input").send_keys("<YOUR BOT EMAIL>")
             self.browser.find_element_by_xpath("/html/body/div[1]/div[1]/div[2]/div/div[2]/div/div/div[2]/div/div[2]/div/div[1]/div/div/button/div[2]").click()
-            self.browser.find_element_by_xpath("/html/body/div[1]/div[1]/div[2]/div/div[2]/div/div/div[2]/div/div[1]/div/form/span/section/div/div/div[1]/div[1]/div/div/div/div/div[1]/div/div[1]/input").send_keys("1snt4b0t;")
+            self.browser.find_element_by_xpath("/html/body/div[1]/div[1]/div[2]/div/div[2]/div/div/div[2]/div/div[1]/div/form/span/section/div/div/div[1]/div[1]/div/div/div/div/div[1]/div/div[1]/input").send_keys("<YOUR BOT PASSWORD>")
             self.browser.find_element_by_xpath("/html/body/div[1]/div[1]/div[2]/div/div[2]/div/div/div[2]/div/div[2]/div/div[1]/div/div/button/div[2]").click()
             sleep(2)
         except:
