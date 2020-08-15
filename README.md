@@ -1,20 +1,21 @@
-##MANUAL DE USO Y GUIA DE INSTALACION  
+MANUAL DE USO Y GUIA DE INSTALACION  
 
 
 
 
-###DEPEDENCIAS  
+DEPEDENCIAS  
 
 
 -Selenium:  
 Para instalarlo:  
+
 ~~~
-pip3 install selenium  
-~~~
-		o  
-~~~
+pip3 install selenium
+~~~  
+o como alternativa usar:  (en caso de no tener pip instalado)  
+~~~ 
 cd selenium-3.141.0/ && python setup.py install
-~~~
+~~~  
 	
 -ChromeDriver:  
 Para instalarlo:  
@@ -38,7 +39,9 @@ Dar permisos de ejecucion a los archivos .py:
 chmod +x *.py  
 ~~~
 Generar el primer usuario y la base de datos:  
-**./botsbyuser.py new_user <nombre_usuario> <password>**  
+~~~
+./botsbyuser.py new_user nombre_usuario password
+~~~
 	
 		
 ###COMANDOS  
