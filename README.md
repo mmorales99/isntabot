@@ -5,7 +5,8 @@ DEPEDENCIAS
 -Selenium:
 	Para instalarlo:
 		pip3 install selenium
-
+				o
+		cd selenium-3.141.0/ && python setup.py install
 -ChromeDriver
 	Para instalarlo:
 		correr el comando:
