@@ -5,6 +5,7 @@ from random import randint
 import unicodedata
 from selenium.webdriver.support.ui import Select
 from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.chrome.service import Service
 import os
 
 def remove_non_acepted_characters(string):
@@ -51,7 +52,8 @@ class pyBot:
         self._do_things(toFollow)
 
     def __init__(self):
-        self.id = 0
+        self.webService = Service('./chromeDriver/chromedriver')
+        self.webService.start()
 
     def activate(self, path=""):
         if(path==""):
@@ -105,7 +107,7 @@ class pyBot:
         self._inicia_sesion()
         self._follow_marked(toFollow)
         self._unfollow_no_followers()
-        self.browser.close()
+        self.browser.quit()
     
     def _follow_marked(self, toFollow=[]):
         if(len(toFollow)==0):
@@ -161,7 +163,7 @@ class pyBot:
                 profile_link.click()
         sleep(1)
     def _goto_register(self, email="<YOUR BOT EMAIL>", id="0"):
-        self.browser=webdriver.Chrome()
+        self.browser=webdriver.Remote(self.webService.service_url)
         self.browser.implicitly_wait(5)
         self.browser.get('https://www.instagram.com/accounts/emailsignup/')
         sleep(2)
@@ -229,10 +231,10 @@ class pyBot:
         verify_input.sendKeys(verify_code)
         self.browser.find_element_by_xpath("/html/body/div[1]/section/main/div/article/div/div[1]/div[2]/form/div/div[2]/button").click()
         sleep(5)
-        self.browser.close()
+        self.browser.quit()
 
     def _inicia_sesion(self):
-        self.browser=webdriver.Chrome()
+        self.browser=webdriver.Remote(self.webService.service_url)
         self.browser.implicitly_wait(5)
         self.browser.get('https://www.instagram.com/')
         sleep(2)
