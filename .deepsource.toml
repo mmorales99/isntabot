@@ -1,6 +1,9 @@
 version = 1
 
-exclude_patterns = ["*/selenium-3.141.0/*","*/chromeDriver/*"]
+exclude_patterns = [
+    "*/selenium-3.141.0/*",
+    "*/chromeDriver/*"
+]
 
 [[analyzers]]
 name = "python"
