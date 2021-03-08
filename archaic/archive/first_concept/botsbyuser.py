@@ -15,9 +15,9 @@ class Database:
 	last_id = 0 # id de los bots
 
 	def __init__(self):
-		if(os.path.isdir(self.workspace_name)==False):
+		if(os.path.isdir(self.workspace_name) is False):
 			self.create_default()
-		elif(os.path.isfile(self.workspace_name+self.config_file_name)==False):
+		elif(os.path.isfile(self.workspace_name+self.config_file_name) is False):
 			self.create_default("onlyconfig")
 		else:
 			config_file = open(self.workspace_name+self.config_file_name,"r")
@@ -71,7 +71,7 @@ class Database:
 		config_file.write("0\n")
 		config_file.write("0\n")
 		config_file.close()
-		if(os.path.isdir(self.workspace_name+"0")==False):
+		if(os.path.isdir(self.workspace_name+"0") is False):
 			adminpath = os.path.join("./"+self.workspace_name+"0")
 			os.mkdir(adminpath)
 			testbot = open(adminpath+"/"+"0.config","w+")
@@ -86,10 +86,10 @@ class Database:
 			f.write("@wazime.es")
 
 def get_bots(UserId, db):
-	if(os.path.isdir(db.getWorkspace()+UserId)==True):
+	if(os.path.isdir(db.getWorkspace()+UserId) is True):
 		userpath = db.getWorkspace()+UserId+'/'
 		userconfig = userpath+UserId+".config"
-		if(os.path.isfile(userconfig)==True):
+		if(os.path.isfile(userconfig) is True):
 			f = open(userconfig,"r") # en este archivo se guardan los identificadores de los bots
 			if(f.mode=="r"):
 				bots_from_file = f.readlines()
@@ -97,7 +97,7 @@ def get_bots(UserId, db):
 				f.close()
 				for x in bots_from_file:
 					botpath = userpath+x+".bot"
-					if(os.path.isfile(botpath)==True):
+					if(os.path.isfile(botpath) is True):
 						fbot = open(botpath,"r") # en este archivo se guardan los identificadores de los bots
 						if(fbot.mode=="r"):
 							bot_info = fbot.readlines()
