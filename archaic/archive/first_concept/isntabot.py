@@ -20,9 +20,6 @@ class identitats:
     n = -1
     a = -1
     a1 = -1
-
-    def __init__(self):
-        super().__init__()
     
     def get_rand_name(self):
         self.n = randint(0, len(self.nombres)-1)
