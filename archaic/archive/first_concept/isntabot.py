@@ -49,6 +49,7 @@ class pyBot:
         self._goto_register(email, id)
         self.save_bot(path)
         self._do_things(toFollow)
+	return self
 
     def __init__(self):
         self.webService = Service('./chromeDriver/chromedriver')
