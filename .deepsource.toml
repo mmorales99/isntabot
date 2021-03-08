@@ -1,8 +1,8 @@
 version = 1
 
 exclude_patterns = [
-    "/selenium-3.141.0/",
-    "/chromeDriver/",
+    "selenium-3.141.0/*",
+    "chromeDriver/*",
     "selenium-3.141.0/selenium/webdriver/remote/"
 ]
 
