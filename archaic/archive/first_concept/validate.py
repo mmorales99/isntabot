@@ -73,11 +73,10 @@ class Validator:
 		for x in self._users_list:
 			if same(valUser, x) is True:
 				if correctPw(valUser, x) is True:
-					# send server info
-					return x.getId()
-				else:
-					# send no correct info # Contraseña erronea
-					return "PW"
+				    # send server info
+				    return x.getId()
+				# send no correct info # Contraseña erronea
+				return "PW"
 		# no correct info # Usuario erroneo
 		return "UW"
 
@@ -85,17 +84,16 @@ class Validator:
 		last_id = -1
 		existing_user = self.validar(user_name, user_pword)
 		if(existing_user!="UW"):
-			return -1
-		else:
-			last_id = self._users_list[-1].getId()
-			last_id = int(last_id)
-			last_id = last_id + 1
-			last_id = str(last_id)
-			userstr = "["+user_name+";"+user_pword+";"+last_id+"]\n"
-			#[nombre_usuario;password;identificador]\n
-			f = open(self._filename, "a")
-			f.write(userstr)
-			f.close()
+		    return -1
+		last_id = self._users_list[-1].getId()
+		last_id = int(last_id)
+		last_id = last_id + 1
+		last_id = str(last_id)
+		userstr = "["+user_name+";"+user_pword+";"+last_id+"]\n"
+		#[nombre_usuario;password;identificador]\n
+		f = open(self._filename, "a")
+		f.write(userstr)
+		f.close()
 		return last_id
 
 

@@ -48,13 +48,12 @@ class Database:
 	def add_user(self, user_name, user_pword): # falta implementarlo en la web, mas adelante
 		user_id = self.validador.createUser(user_name, user_pword)
 		if(user_id==-1):
-			return "Existing user"
-		else:
-			config_file = open(self.workspace_name+self.config_file_name, "a")
-			config_file.write(user_id+"\n")
-			config_file.close()
-			os.mkdir(os.path.join(self.workspace_name+user_id))
-			return "User added"
+		    return "Existing user"
+		config_file = open(self.workspace_name+self.config_file_name, "a")
+		config_file.write(user_id+"\n")
+		config_file.close()
+		os.mkdir(os.path.join(self.workspace_name+user_id))
+		return "User added"
 
 	def add_bot(self, user_id, toFollow=None, user_email="<YOUR BOT EMAIL>"):
 		if toFollow is None:
