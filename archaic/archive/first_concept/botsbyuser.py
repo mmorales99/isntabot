@@ -2,7 +2,6 @@
 
 import os
 import sys
-import array
 from isntabot import pyBot
 from validate import Validator
 
