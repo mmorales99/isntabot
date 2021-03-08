@@ -56,7 +56,9 @@ class Database:
 			os.mkdir(os.path.join(self.workspace_name+user_id))
 			return "User added"
 
-	def add_bot(self, user_id, toFollow=[], user_email="<YOUR BOT EMAIL>"):
+	def add_bot(self, user_id, toFollow=None, user_email="<YOUR BOT EMAIL>"):
+		if toFollow is None:
+			toFollow = []
 		user_path = self.workspace_name + str(user_id)+"/"
 		nbot = pyBot().create(user_email, self._getLastId(), toFollow, user_path)
 		f = open(user_path+str(user_id)+".config", "a+")
