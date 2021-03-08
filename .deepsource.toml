@@ -2,8 +2,7 @@ version = 1
 
 exclude_patterns = [
     "isntabot/archaic/archive/first_concept/selenium*/*",
-    "chromeDriver/*",
-    "selenium-3.141.0/selenium/webdriver/remote/"
+    "isntabot/archaic/archive/first_concept/chromeDriver/*",
 ]
 
 [[analyzers]]
