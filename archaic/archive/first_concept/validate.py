@@ -36,7 +36,7 @@ class Validator:
 			workspace_name = "./"
 		self._filename = workspace_name + self._filename
 		file_exists = os.path.isfile(self._filename)
-		if(file_exists == False):
+		if(file_exists is False):
 			_validated_data_file = open(self._filename, "w+")
 			_validated_data_file.write("##\n#\n# Formato de escritura de nuevos usuarios:\n#\n#\n#   [nombre_usuario;password;identificador]\\n\n#\n#\n#\n##\n\n[manuel@wazime.es;wazime1234;0]\n")
 			_validated_data_file.close()
@@ -71,8 +71,8 @@ class Validator:
 		valUser.setName(userName)
 		valUser.setPword(userPword)
 		for x in self._users_list:
-			if same(valUser, x) == True:
-				if correctPw(valUser, x) == True:
+			if same(valUser, x) is True:
+				if correctPw(valUser, x) is True:
 					# send server info
 					return x.getId()
 				else:
