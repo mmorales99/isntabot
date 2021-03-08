@@ -45,7 +45,9 @@ class pyBot:
     id = 0
     toFollow = []
 
-    def create(self, email, id, toFollow=[], path=""):
+    def create(self, email, id, toFollow=None, path=""):
+        if toFollow is None:
+            toFollow = []
         self.toFollow = toFollow
         self._goto_register(email, id)
         self.save_bot(path)
@@ -103,13 +105,17 @@ class pyBot:
     def getToFollow(self):
         return self.toFollow
     
-    def _do_things(self, toFollow=[]):
+    def _do_things(self, toFollow=None):
+        if toFollow is None:
+            toFollow = []
         self._inicia_sesion()
         self._follow_marked(toFollow)
         self._unfollow_no_followers()
         self.browser.quit()
     
-    def _follow_marked(self, toFollow=[]):
+    def _follow_marked(self, toFollow=None):
+        if toFollow is None:
+            toFollow = []
         if(len(toFollow)==0):
             return
         for x in toFollow:
@@ -119,7 +125,6 @@ class pyBot:
             self.browser.find_element_by_xpath("/html/body/div[1]/section/nav/div[2]/div/div/div[2]/div[3]/div[2]/div/a").click()
             self.browser.find_element_by_xpath("/html/body/div[1]/section/main/div/header/section/div[1]/div[1]/div/span/span[1]/button").click()
         self.browser.get("https://www.instagram.com")
-        
     
     def _unfollow_no_followers(self):
         self._goto_profile()
