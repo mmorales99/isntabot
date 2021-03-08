@@ -49,7 +49,7 @@ class Validator:
 			for x in _file:
 				if x[0] == "#":
 					continue
-				if x[0] == " " or x[0] == "\n":
+				if x[0] in (' ','\n'):
 					continue
 				if x[0] == "[":
 					fbl = -1
