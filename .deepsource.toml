@@ -1,16 +1,10 @@
 version = 1
 
+exclude_patterns = ["*/selenium*/*"]
+
 [[analyzers]]
 name = "python"
 enabled = true
 
   [analyzers.meta]
   runtime_version = "3.x.x"
-
-[[analyzers]]
-name = "test-coverage"
-enabled = true
-
-[[analyzers]]
-name = "secrets"
-enabled = true
